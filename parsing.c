@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 15:20:14 by oumondad          #+#    #+#             */
-/*   Updated: 2024/02/26 20:03:05 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/02/26 23:08:16 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_error(char *str)
 {
 	write(2, str, ft_strlen(str));
-	//system("leaks push_swap");
 	exit(1);
 }
 
@@ -35,6 +34,21 @@ t_var	ft_khchi_fchi(char **av)
 	return (data);
 }
 
+void	check_long(char *str)
+{
+	int	o;
+	int	i;
+
+	o = 0;
+	i = 0;
+	while (str[o] == '0')
+		o++;
+	while (str[i])
+		i++;
+	if (i - o > 11)
+		ft_error("Error");
+}
+
 void	check_all(t_var data)
 {
 	long	x;
@@ -45,42 +59,30 @@ void	check_all(t_var data)
 	y = 0;
 	while (data.split[y])
 	{
+		check_long(data.split[y]);
 		x = ft_atoi(data.split[y]);
 		i = y;
 		while (data.split[i])
 		{
 			if (data.split[i + 1] == NULL)
 				break ;
-			if ( x == ft_atoi(data.split[i + 1]))
-				ft_error("duplicate nbr");
+			if (x == ft_atoi(data.split[i + 1]))
+				ft_error("Error");
 			i++;
 		}
 		y++;
 	}
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	(void)ac;
-	t_var data;
+	t_var	data;
 
-	data = ft_khchi_fchi(av);
-	check_all(data);
+	if (ac == 2)
+	{
+		data = ft_khchi_fchi(av);
+		check_all(data);
+	}
 	//system("leaks push_swap");
+	return (0);
 }
-
-// int main(int ac, char **av)
-// {
-// 	(void)ac;
-// 	t_var data;
-
-// 	data.i = 1;
-// 	while (av[data.i])
-// 	{
-// 		ft_check_str(av[data.i]);
-// 		data.j = ft_atol(av[data.i]);
-// 		printf("%d\n", data.j);
-// 		data.i++;
-// 	}
-// 	return (0);
-// }

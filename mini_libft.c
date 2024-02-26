@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:40:01 by oumondad          #+#    #+#             */
-/*   Updated: 2024/02/26 20:18:28 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/02/26 22:58:25 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,18 @@ size_t	ft_strlen(char *str)
 void	ft_check_str(char *str)
 {
 	int	i;
-	int x;
-	int o;
+	int	x;
 
 	i = 0;
 	x = 0;
-	o = 0;
-	while (str[o] == '0')
-		o++;
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] != ' ')
 			x++;
 		i++;
 	}
-	if (x == 0 || (i - o) > 11)
-		ft_error("ERROR\n");
+	if (x == 0)
+		ft_error("Error\n");
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -92,7 +88,7 @@ char	*ft_strjoin(char *stack, char *buffer)
 
 int	ft_atoi(char *str)
 {
-	t_var data;
+	t_var	data;
 
 	data.i = 0;
 	data.sign = 1;
@@ -107,14 +103,13 @@ int	ft_atoi(char *str)
 	}
 	while ((str[data.i] >= '0' && str[data.i] <= '9'))
 	{
-		if (data.result * 10 > 2147483647 || data.result * 10 * -1 < -2147483648)
-			ft_error("Error");
 		data.result = data.result * 10 + (str[data.i] - '0');
 		data.i++;
 	}
-	if (data.result * data.sign == -2147483649)
+	if (str[data.i])
 		ft_error("Error");
-	if (str[data.i] || (str[data.i] < '0' && str[data.i] > '9'))
+	data.result *= data.sign;
+	if (data.result > INT_MAX || data.result < INT_MIN)
 		ft_error("Error");
-	return (data.result * data.sign);
+	return (data.result);
 }
