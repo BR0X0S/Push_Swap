@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 15:20:14 by oumondad          #+#    #+#             */
-/*   Updated: 2024/02/26 23:08:16 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/02/26 23:09:18 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,5 @@ int	main(int ac, char **av)
 		data = ft_khchi_fchi(av);
 		check_all(data);
 	}
-	//system("leaks push_swap");
 	return (0);
 }
