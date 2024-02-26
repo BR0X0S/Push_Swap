@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:40:01 by oumondad          #+#    #+#             */
-/*   Updated: 2024/02/26 17:45:34 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/02/26 20:18:28 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_check_str(char *str)
 			x++;
 		i++;
 	}
-	if (x == 0 ||  (i - o) > 11)
+	if (x == 0 || (i - o) > 11)
 		ft_error("ERROR\n");
 }
 
@@ -72,10 +72,11 @@ char	*ft_strjoin(char *stack, char *buffer)
 	size_t	stack_len;
 	size_t	buffer_len;
 
+	ft_check_str(buffer);
 	stack_len = ft_strlen(stack);
 	buffer_len = ft_strlen(buffer);
 	i = -1;
-	str = malloc(stack_len + buffer_len + 1);
+	str = malloc(stack_len + buffer_len + 2);
 	if (!str)
 		return (free(stack), free(buffer), NULL);
 	while (++i < stack_len && stack)
@@ -84,17 +85,20 @@ char	*ft_strjoin(char *stack, char *buffer)
 	j = -1;
 	while (++j < buffer_len)
 		str[i + j] = buffer[j];
-	str[i + j] = '\0';
-	return (free(stack), free(buffer), str);
+	str[i + j] = ' ';
+	str[i + j + 1] = '\0';
+	return (free(stack), str);
 }
 
-long	ft_atol(char *str)
+int	ft_atoi(char *str)
 {
 	t_var data;
 
 	data.i = 0;
 	data.sign = 1;
 	data.result = 0;
+	if ((str[0] == '-' && str[1] == '\0') || (str[0] == '+' && str[1] == '\0'))
+		ft_error("Error");
 	if (str[data.i] == '-' || str[data.i] == '+')
 	{
 		if (str[data.i] == '-')
@@ -103,11 +107,13 @@ long	ft_atol(char *str)
 	}
 	while ((str[data.i] >= '0' && str[data.i] <= '9'))
 	{
-		if (data.result * 10 > 2147483648 || data.result * 10 * data.sign < -2147483647)
+		if (data.result * 10 > 2147483647 || data.result * 10 * -1 < -2147483648)
 			ft_error("Error");
 		data.result = data.result * 10 + (str[data.i] - '0');
 		data.i++;
 	}
+	if (data.result * data.sign == -2147483649)
+		ft_error("Error");
 	if (str[data.i] || (str[data.i] < '0' && str[data.i] > '9'))
 		ft_error("Error");
 	return (data.result * data.sign);

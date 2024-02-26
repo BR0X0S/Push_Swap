@@ -6,7 +6,7 @@
 #    By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/26 16:12:26 by oumondad          #+#    #+#              #
-#    Updated: 2024/02/26 17:47:49 by oumondad         ###   ########.fr        #
+#    Updated: 2024/02/26 19:57:21 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = ft_split.c mini_libft.c parsing.c
 
 OBJ = ${SRC:.c=.o}
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
 
 CC = cc
 

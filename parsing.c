@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 15:20:14 by oumondad          #+#    #+#             */
-/*   Updated: 2024/02/26 17:46:06 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/02/26 20:03:05 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,48 @@
 void	ft_error(char *str)
 {
 	write(2, str, ft_strlen(str));
+	//system("leaks push_swap");
 	exit(1);
+}
+
+t_var	ft_khchi_fchi(char **av)
+{
+	t_var	data;
+	int		i;
+
+	i = 1;
+	data.args = NULL;
+	while (av[i])
+	{
+		data.args = ft_strjoin(data.args, av[i]);
+		i++;
+	}
+	data.split = ft_split(data.args, ' ');
+	return (data);
+}
+
+void	check_all(t_var data)
+{
+	long	x;
+	long	y;
+	long	i;
+
+	i = 0;
+	y = 0;
+	while (data.split[y])
+	{
+		x = ft_atoi(data.split[y]);
+		i = y;
+		while (data.split[i])
+		{
+			if (data.split[i + 1] == NULL)
+				break ;
+			if ( x == ft_atoi(data.split[i + 1]))
+				ft_error("duplicate nbr");
+			i++;
+		}
+		y++;
+	}
 }
 
 int main(int ac, char **av)
@@ -23,13 +64,23 @@ int main(int ac, char **av)
 	(void)ac;
 	t_var data;
 
-	data.i = 1;
-	while (av[data.i])
-	{
-		ft_check_str(av[data.i]);
-		data.j = ft_atol(av[data.i]);
-		printf("%d\n", data.j);
-		data.i++;
-	}
-	return (0);
+	data = ft_khchi_fchi(av);
+	check_all(data);
+	//system("leaks push_swap");
 }
+
+// int main(int ac, char **av)
+// {
+// 	(void)ac;
+// 	t_var data;
+
+// 	data.i = 1;
+// 	while (av[data.i])
+// 	{
+// 		ft_check_str(av[data.i]);
+// 		data.j = ft_atol(av[data.i]);
+// 		printf("%d\n", data.j);
+// 		data.i++;
+// 	}
+// 	return (0);
+// }
