@@ -6,7 +6,7 @@
 #    By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/26 16:12:26 by oumondad          #+#    #+#              #
-#    Updated: 2024/02/26 23:06:34 by oumondad         ###   ########.fr        #
+#    Updated: 2024/02/27 15:30:41 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,6 @@ fclean : clean
 
 re : fclean all
 
-PHONY : re all clean fclean
+.PHONY : re all clean fclean
 
-SECONDARY: $(OBJ)
+.SECONDARY: $(OBJ)

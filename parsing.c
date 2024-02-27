@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 15:20:14 by oumondad          #+#    #+#             */
-/*   Updated: 2024/02/26 23:09:18 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/02/27 17:41:55 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_var	ft_khchi_fchi(char **av)
 		i++;
 	}
 	data.split = ft_split(data.args, ' ');
+	check_all(data);
 	return (data);
 }
 
@@ -78,10 +79,7 @@ int	main(int ac, char **av)
 {
 	t_var	data;
 
-	if (ac == 2)
-	{
+	if (ac >= 2)
 		data = ft_khchi_fchi(av);
-		check_all(data);
-	}
 	return (0);
 }
