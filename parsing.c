@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 15:20:14 by oumondad          #+#    #+#             */
-/*   Updated: 2024/02/27 17:41:55 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/02 18:24:39 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_var	ft_khchi_fchi(char **av)
 		i++;
 	}
 	data.split = ft_split(data.args, ' ');
-	check_all(data);
+	data = check_all(data);
 	return (data);
 }
 
@@ -50,19 +50,18 @@ void	check_long(char *str)
 		ft_error("Error");
 }
 
-void	check_all(t_var data)
+t_var	check_all(t_var data)
 {
 	long	x;
-	long	y;
 	long	i;
 
 	i = 0;
-	y = 0;
-	while (data.split[y])
+	data.y = 0;
+	while (data.split[data.y])
 	{
-		check_long(data.split[y]);
-		x = ft_atoi(data.split[y]);
-		i = y;
+		check_long(data.split[data.y]);
+		x = ft_atoi(data.split[data.y]);
+		i = data.y;
 		while (data.split[i])
 		{
 			if (data.split[i + 1] == NULL)
@@ -71,15 +70,20 @@ void	check_all(t_var data)
 				ft_error("Error");
 			i++;
 		}
-		y++;
+		data.y++;
 	}
+	return (data);
 }
 
-int	main(int ac, char **av)
+t_var	array_to_stack(t_list **stack_a, t_var data)
 {
-	t_var	data;
+	int	i;
 
-	if (ac >= 2)
-		data = ft_khchi_fchi(av);
-	return (0);
+	i = 0;
+	while (i < data.y)
+	{
+		ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(data.split[i])));
+		i++;
+	}
+	return (data);
 }
