@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 23:01:47 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/02 18:01:15 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/08 20:49:39 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	print_stack(t_list *stack_a);
 t_var	array_to_stack(t_list **stack_a, t_var data);
+void	ft_lstadd_front(t_list **stack, t_list *new_node);
 
 /*********************/
 

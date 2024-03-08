@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:43:59 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/01 20:04:30 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/08 16:31:23 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,12 @@ t_list	*ft_lstlast(t_list *lst)
 	while (lst -> next != NULL)
 		lst = lst -> next;
 	return (lst);
+}
+
+void	ft_lstadd_front(t_list **stack, t_list *new_node)
+{
+	if (!stack || !new_node)
+		return ;
+	new_node -> next = *stack;
+	*stack = new_node;
 }
