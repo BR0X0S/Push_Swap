@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:28:07 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/11 21:44:28 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/12 21:32:46 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ void	push_b(t_list **stack_a, t_list **stack_b, int flag)
 
 void	swap_a(t_list **stack_a, int flag)
 {
-	t_list *tmp;
-	t_list *tmp2;
-	t_list *tmp3;
+	t_list	*tmp;
+	t_list	*tmp2;
+	t_list	*tmp3;
 
-	if (ft_lstsize(*stack_a) < 2)
+	if (lstsize(*stack_a) < 2)
 		return ;
-	tmp =  *stack_a;
+	tmp = *stack_a;
 	tmp2 = (*stack_a)->next;
 	tmp3 = tmp2->next;
 	*stack_a = tmp2;
@@ -62,13 +62,13 @@ void	swap_a(t_list **stack_a, int flag)
 
 void	swap_b(t_list **stack_b, int flag)
 {
-	t_list *tmp;
-	t_list *tmp2;
-	t_list *tmp3;
+	t_list	*tmp;
+	t_list	*tmp2;
+	t_list	*tmp3;
 
-	if (ft_lstsize(*stack_b) < 2)
+	if (lstsize(*stack_b) < 2)
 		return ;
-	tmp =  *stack_b;
+	tmp = *stack_b;
 	tmp2 = (*stack_b)->next;
 	tmp3 = tmp2->next;
 	*stack_b = tmp2;
@@ -82,6 +82,6 @@ void	swap_s(t_list **stack_a, t_list **stack_b, int flag)
 {
 	swap_a(stack_a, 0);
 	swap_b(stack_b, 0);
-	if (flag && ft_lstsize(*stack_b) >= 2 && ft_lstsize(*stack_b) >= 2)
+	if ((flag && lstsize(*stack_b) >= 2) || (flag && lstsize(*stack_b) >= 2))
 		write(1, "ss\n", 3);
 }

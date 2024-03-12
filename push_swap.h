@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 23:01:47 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/11 20:57:01 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/12 21:46:21 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,24 +46,33 @@ void	ft_error(char *str);
 size_t	ft_strlen(char *str);
 t_var	check_all(t_var data);
 void	ft_check_str(char *str);
+t_var	ft_khchi_fchi(char **av);
 char	**ft_split(char const *s, char c);
 char	*ft_strjoin(char *stack, char *buffer);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-t_var	ft_khchi_fchi(char **av);
 
 /* INSTRACTION FUNCTIONS */
 
-void	push_a(t_list **stack_a, t_list **stack_b);
-void	push_b(t_list **stack_a, t_list **stack_b);
-void	swap_a(t_list **stack_a);
+void	push_a(t_list **stack_a, t_list **stack_b, int flag);
+void	push_b(t_list **stack_a, t_list **stack_b, int flag);
+void	swap_s(t_list **stack_a, t_list **stack_b, int flag);
+void	ra_rb(t_list **stack_a, t_list **stack_b, int flag);
+void	rrr(t_list **stack_a, t_list **stack_b, int flag);
+void	revers_rotate_a(t_list **stack_a, int flag);
+void	revers_rotate_b(t_list **stack_b, int flag);
+void	rotate_a(t_list **stack_a, int flag);
+void	rotate_b(t_list **stack_a, int flag);
+void	swap_a(t_list **stack_a, int flag);
+void	swap_b(t_list **stack_b, int flag);
 
 /* lists fanktoin*/
 
-void	ft_lstadd_back(t_list **lst, t_list *new);
+int		lstsize(t_list *lst);
 t_list	*ft_lstnew(int content);
-int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	print_stack(t_list *stack_a);
+t_list	*ft_before_last(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 t_var	array_to_stack(t_list **stack_a, t_var data);
 void	ft_lstadd_front(t_list **stack, t_list *new_node);
 

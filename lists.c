@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:43:59 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/08 16:31:23 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/12 21:27:44 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_list	*ft_lstnew(int content)
 	return (node);
 }
 
-int	ft_lstsize(t_list *lst)
+int	lstsize(t_list *lst)
 {
 	int	i;
 
