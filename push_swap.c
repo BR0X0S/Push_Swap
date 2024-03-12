@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 16:57:25 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/07 14:32:02 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/11 21:18:29 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,12 @@ int	main(int ac, char **av)
 	data = ft_khchi_fchi(av);
 	array_to_stack(&stack_a, data);
 	print_stack(stack_a);
+	print_stack(stack_b);
+	printf("\n-----------------\n");
+	push_b(&stack_a, &stack_b);
+	push_a(&stack_a, &stack_b);
+	print_stack(stack_a);
+	printf("\n-----------------\n");
+	print_stack(stack_b);
 	return (0);
 }

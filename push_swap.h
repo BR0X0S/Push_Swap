@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 23:01:47 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/08 20:49:39 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:57:01 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 t_var	ft_khchi_fchi(char **av);
 
 /* INSTRACTION FUNCTIONS */
+
+void	push_a(t_list **stack_a, t_list **stack_b);
+void	push_b(t_list **stack_a, t_list **stack_b);
+void	swap_a(t_list **stack_a);
+
 /* lists fanktoin*/
 
 void	ft_lstadd_back(t_list **lst, t_list *new);

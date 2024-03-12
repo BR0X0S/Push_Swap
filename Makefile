@@ -6,13 +6,13 @@
 #    By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/26 16:12:26 by oumondad          #+#    #+#              #
-#    Updated: 2024/03/02 17:59:32 by oumondad         ###   ########.fr        #
+#    Updated: 2024/03/10 17:47:16 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = ft_split.c mini_libft.c parsing.c lists.c push_swap.c
+SRC = ft_split.c mini_libft.c parsing.c lists.c push_swap.c ft_pushes.c
 
 OBJ = ${SRC:.c=.o}
 
