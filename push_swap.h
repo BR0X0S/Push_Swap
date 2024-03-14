@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 23:01:47 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/12 21:46:21 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/12 22:37:43 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	swap_b(t_list **stack_b, int flag);
 int		lstsize(t_list *lst);
 t_list	*ft_lstnew(int content);
 t_list	*ft_lstlast(t_list *lst);
-void	print_stack(t_list *stack_a);
+void	print_stack(t_list *stack_a, char c);
 t_list	*ft_before_last(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 t_var	array_to_stack(t_list **stack_a, t_var data);
