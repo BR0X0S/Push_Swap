@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 23:01:47 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/12 22:37:43 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/26 23:14:41 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_var
 	long	y;
 	char	*args;
 	char	**split;
+	int		*array;
 }	t_var;
 
 /* PARCING FUNCTIONS */
@@ -64,6 +65,7 @@ void	rotate_a(t_list **stack_a, int flag);
 void	rotate_b(t_list **stack_a, int flag);
 void	swap_a(t_list **stack_a, int flag);
 void	swap_b(t_list **stack_b, int flag);
+t_var	bubble_sort(t_var data);
 
 /* lists fanktoin*/
 
@@ -76,6 +78,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 t_var	array_to_stack(t_list **stack_a, t_var data);
 void	ft_lstadd_front(t_list **stack, t_list *new_node);
 
+/* SORT FUNCTIONS */
 /*********************/
 
 #endif

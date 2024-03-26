@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:35:55 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/12 21:39:48 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/26 23:10:19 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,29 @@ void	ra_rb(t_list **stack_a, t_list **stack_b, int flag)
 	rotate_b(stack_b, 0);
 	if ((flag && lstsize(*stack_a) >= 2) || (flag && lstsize(*stack_b) >= 2))
 		write(1, "rr\n", 3);
+}
+
+t_var	bubble_sort(t_var data)
+{
+	int	i;
+	int	j;
+	int	tmp;
+
+	i = 0;
+	while (i < data.y - 1)
+	{
+		j = 0;
+		while (j < data.y - 1)
+		{
+			if (data.array[j] > data.array[j + 1])
+			{
+				tmp = data.array[j];
+				data.array[j] = data.array[j + 1];
+				data.array[j + 1] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (data);
 }

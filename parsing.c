@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 15:20:14 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/10 19:10:50 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/26 21:38:36 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,11 @@ t_var	array_to_stack(t_list **stack_a, t_var data)
 	int	i;
 
 	i = 0;
+	data.array = malloc(data.y * sizeof(int));
 	while (i < data.y)
 	{
 		ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(data.split[i])));
+		data.array[i] = ft_atoi(data.split[i]);
 		i++;
 	}
 	return (data);
