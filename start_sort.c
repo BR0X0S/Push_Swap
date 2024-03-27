@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 23:16:18 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/27 01:26:59 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/27 01:34:23 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,29 @@
 
 void	sort_3(t_list **stack_a)
 {
-	if (!check_if_sort(*stack_a))
-		return ;
-	else if ((*stack_a)->content < (*stack_a)->next->content && (*stack_a)->next->content > (*stack_a)->next->next->content && (*stack_a)->content < (*stack_a)->next->next->content)
+	if ((*stack_a)->content < (*stack_a)->next->content
+		&& (*stack_a)->next->content > (*stack_a)->next->next->content
+		&& (*stack_a)->content < (*stack_a)->next->next->content)
 	{
 		revers_rotate_a(stack_a, 1);
 		swap_a(stack_a, 1);
 	}
-	else if ((*stack_a)->content > (*stack_a)->next->content && (*stack_a)->next->content < (*stack_a)->next->next->content && (*stack_a)->content < (*stack_a)->next->next->content)
+	else if ((*stack_a)->content > (*stack_a)->next->content
+		&& (*stack_a)->next->content < (*stack_a)->next->next->content
+		&& (*stack_a)->content < (*stack_a)->next->next->content)
 		swap_a(stack_a, 1);
-	else if ((*stack_a)->content < (*stack_a)->next->content && (*stack_a)->content > (*stack_a)->next->next->content)
+	else if ((*stack_a)->content < (*stack_a)->next->content
+		&& (*stack_a)->content > (*stack_a)->next->next->content)
 		revers_rotate_a(stack_a, 1);
-	else if ((*stack_a)->content > (*stack_a)->next->content && (*stack_a)->next->content > (*stack_a)->next->next->content)
+	else if ((*stack_a)->content > (*stack_a)->next->content
+		&& (*stack_a)->next->content > (*stack_a)->next->next->content)
 	{
 		rotate_a(stack_a, 1);
 		swap_a(stack_a, 1);
 	}
-	else if ((*stack_a)->content > (*stack_a)->next->content && (*stack_a)->content > (*stack_a)->next->next->content && (*stack_a)->next->next->content > (*stack_a)->next->content)
+	else if ((*stack_a)->content > (*stack_a)->next->content
+		&& (*stack_a)->content > (*stack_a)->next->next->content
+		&& (*stack_a)->next->next->content > (*stack_a)->next->content)
 		rotate_a(stack_a, 1);
 	return ;
 }
@@ -48,6 +54,8 @@ int	start_sort(t_var data, t_list **stack_a, t_list **stack_b)
 	}
 	else if (data.y == 3)
 	{
+		if (!check_if_sort(*stack_a))
+			return (0);
 		sort_3(stack_a);
 		return (0);
 	}
