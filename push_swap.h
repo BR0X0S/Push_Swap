@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 23:01:47 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/26 23:14:41 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/27 01:25:42 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+
+/* INDEXES MACROS */
+
+// # define INDEX_1 (*stack_a)->content
+// # define INDEX_2 (*stack_a)->next->content
+// # define INDEX_3 (*stack_a)->next->next->content
 
 /* LINKED LIST STRUCT */
 
@@ -79,6 +85,10 @@ t_var	array_to_stack(t_list **stack_a, t_var data);
 void	ft_lstadd_front(t_list **stack, t_list *new_node);
 
 /* SORT FUNCTIONS */
+
+int		start_sort(t_var data, t_list **stack_a, t_list **stack_b);
+int		check_if_sort(t_list *stack);
+
 /*********************/
 
 #endif
