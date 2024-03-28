@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 20:25:32 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/12 21:44:42 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/28 23:47:52 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,26 @@ void	rrr(t_list **stack_a, t_list **stack_b, int flag)
 	revers_rotate_b(stack_b, 0);
 	if ((flag && lstsize(*stack_b) >= 2) || (flag && lstsize(*stack_b) >= 2))
 		write(1, "rrr\n", 3);
+}
+
+int	get_min_pos(t_list *stack)
+{
+	int	i;
+	int	j;
+	int	value;
+
+	i = 0;
+	j = 0;
+	value = stack->content;
+	while (stack->next)
+	{
+		if (value > stack->next->content)
+		{
+			value = stack->next->content;
+			j = i + 1;
+		}
+		stack = stack->next;
+		i++;
+	}
+	return (j);
 }

@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 23:16:18 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/27 01:34:23 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/03/28 23:45:54 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,32 @@ void	sort_3(t_list **stack_a)
 	return ;
 }
 
+void	push_min(t_list **stack_a, t_list **stack_b)
+{
+	int	x;
+
+	x = get_min_pos(*stack_a);
+	while (get_min_pos(*stack_a) != 0 && x >= 3)
+		revers_rotate_a(stack_a, 1);
+	while (get_min_pos(*stack_a) != 0)
+		rotate_a(stack_a, 1);
+	if (get_min_pos(*stack_a) == 0)
+		push_b(stack_a, stack_b, 1);
+}
+
+void	sort_4_5(t_var data, t_list **stack_a, t_list **stack_b)
+{
+	if (data.y == 5)
+		push_min(stack_a, stack_b);
+	push_min(stack_a, stack_b);
+	sort_3(stack_a);
+	if (data.y == 5)
+		push_a(stack_a, stack_b, 1);
+	push_a(stack_a, stack_b, 1);
+}
+
 int	start_sort(t_var data, t_list **stack_a, t_list **stack_b)
 {
-	(void)stack_b;
 	if (data.y == 1)
 		return (0);
 	else if (data.y == 2)
@@ -57,6 +80,11 @@ int	start_sort(t_var data, t_list **stack_a, t_list **stack_b)
 		if (!check_if_sort(*stack_a))
 			return (0);
 		sort_3(stack_a);
+		return (0);
+	}
+	else if (data.y == 4 || data.y == 5)
+	{
+		sort_4_5(data, stack_a, stack_b);
 		return (0);
 	}
 	return (1);
