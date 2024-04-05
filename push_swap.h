@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 23:01:47 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/28 23:46:26 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/04 23:54:33 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ int		get_min_pos(t_list *stack);
 int		check_if_sort(t_list *stack);
 int		start_sort(t_var data, t_list **stack_a, t_list **stack_b);
 void	push_min(t_list **stack_a, t_list **stack_b);
+void	full_sort(t_var data, t_list **stack_a, t_list **stack_b);
 
 /*********************/
 

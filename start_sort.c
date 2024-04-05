@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 23:16:18 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/28 23:45:54 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/05 00:11:58 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,16 @@ int	start_sort(t_var data, t_list **stack_a, t_list **stack_b)
 	{
 		if ((*stack_a)->content > (*stack_a)->next->content)
 			swap_a(stack_a, 1);
-		return (0);
 	}
 	else if (data.y == 3)
 	{
 		if (!check_if_sort(*stack_a))
 			return (0);
 		sort_3(stack_a);
-		return (0);
 	}
 	else if (data.y == 4 || data.y == 5)
-	{
 		sort_4_5(data, stack_a, stack_b);
-		return (0);
-	}
-	return (1);
+	else
+		full_sort(data, stack_a, stack_b);
+	return (0);
 }

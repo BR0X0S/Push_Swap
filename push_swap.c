@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 16:57:25 by oumondad          #+#    #+#             */
-/*   Updated: 2024/03/28 23:47:09 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/05 00:26:05 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,12 @@ int	main(int ac, char **av)
 	stack_b = NULL;
 	data = ft_khchi_fchi(av);
 	data = array_to_stack(&stack_a, data);
-	if (check_if_sort(stack_a) == 0)
+	if (!check_if_sort(stack_a))
 		return (0);
-	print_stack(stack_a, 'A');
+	data = bubble_sort(data);
+	// print_stack(stack_a, 'A');
 	start_sort(data, &stack_a, &stack_b);
-	print_stack(stack_a, 'A');
+	// print_stack(stack_a, 'A');
+	// print_stack(stack_b, 'B');
 	return (0);
 }
