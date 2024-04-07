@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 23:51:36 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/05 00:34:56 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/07 00:02:07 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	get_rang(t_var data)
 		return (30);
 	if (data.y > 500)
 		return (45);
-	return 0;
+	return (0);
 }
 
 void	check_swap(t_list **stack)
@@ -34,26 +34,57 @@ void	check_swap(t_list **stack)
 	}
 }
 
+t_var	find_max(t_list *stack)
+{
+	int		i;
+	t_var	data;
+
+	i = 0;
+	data.mpos = 0;
+	data.max = (stack)->content;
+	if (lstsize(stack) >= 2)
+	{
+		while ((stack)->next)
+		{
+			if (data.max < (stack)->next->content)
+			{
+				data.max = (stack)->next->content;
+				data.mpos = i + 1;
+			}
+			i++;
+			stack = (stack)->next;
+		}
+	}
+	return (data);
+}
+
+void	revrot(t_list **stack_a, t_list **stack_b, t_var data)
+{
+	data = find_max(*stack_b);
+	if (data.mpos <= (lstsize(*stack_b) / 2))
+	{
+		while (data.max != (*stack_b)->content)
+			rotate_a(stack_b, 1);
+	}
+	else
+		while (data.max != (*stack_b)->content)
+			revers_rotate_a(stack_b, 1);
+	push_a(stack_a, stack_b, 1);
+}
+
 void	full_sort(t_var data, t_list **stack_a, t_list **stack_b)
 {
 	int	r;
 	int	i;
 
-	i = -1;
-	r = get_rang(data);
-	while (++i < data.y)
-		printf("arr[%d] = %d\n", i, data.array[i]);
-	while (1)
-	{
-		printf("arr[%d] = %d\n", i, data.array[i]);
-		i++;
-	}
-		
 	i = 0;
+	r = get_rang(data);
 	while (*stack_a)
 	{
-		printf("arr[0] => %d, arr[fin] => %d\n", data.array[i], data.array[r + i]);
-		if ((*stack_a)->content > data.array[i] && (*stack_a)->content <= data.array[r + 1])
+		if (r + i >= data.y)
+			r = data.y - i - 1;
+		else if ((*stack_a)->content > data.array[i]
+			&& (*stack_a)->content <= data.array[r + i])
 		{
 			push_b(stack_a, stack_b, 1);
 			check_swap(stack_b);
@@ -66,8 +97,6 @@ void	full_sort(t_var data, t_list **stack_a, t_list **stack_b)
 			i++;
 		}
 		else
-		{
 			rotate_a(stack_a, 1);
-		}
-	}	
+	}
 }

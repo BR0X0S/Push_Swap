@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 23:16:18 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/05 00:11:58 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/07 00:04:06 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,10 @@ int	start_sort(t_var data, t_list **stack_a, t_list **stack_b)
 	else if (data.y == 4 || data.y == 5)
 		sort_4_5(data, stack_a, stack_b);
 	else
+	{
 		full_sort(data, stack_a, stack_b);
+		while (*stack_b)
+			revrot(stack_a, stack_b, data);
+	}
 	return (0);
 }

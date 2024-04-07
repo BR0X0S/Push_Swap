@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 23:01:47 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/04 23:54:33 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/07 00:03:36 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ typedef struct s_var
 	char	*args;
 	char	**split;
 	int		*array;
+	int		mpos;
+	int		max;
 }	t_var;
 
 /* PARCING FUNCTIONS */
@@ -82,9 +84,10 @@ void	ft_lstadd_front(t_list **stack, t_list *new_node);
 
 int		get_min_pos(t_list *stack);
 int		check_if_sort(t_list *stack);
-int		start_sort(t_var data, t_list **stack_a, t_list **stack_b);
 void	push_min(t_list **stack_a, t_list **stack_b);
+void	revrot(t_list **stack_a, t_list **stack_b, t_var data);
 void	full_sort(t_var data, t_list **stack_a, t_list **stack_b);
+int		start_sort(t_var data, t_list **stack_a, t_list **stack_b);
 
 /*********************/
 
