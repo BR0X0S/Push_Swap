@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 23:16:18 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/07 00:04:06 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/07 23:10:40 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,42 @@ int	start_sort(t_var data, t_list **stack_a, t_list **stack_b)
 	{
 		full_sort(data, stack_a, stack_b);
 		while (*stack_b)
-			revrot(stack_a, stack_b, data);
+			last_sort(stack_a, stack_b, data);
 	}
 	return (0);
+}
+
+// void	check_revers(t_list **stack_a)
+// {
+// 	while ((*stack_a)->next)
+// 	{
+// 		if ((*stack_a)->content > (*stack_a)->next->content)
+// 		{
+// 			revers_rotate_a(stack_a, 1);
+// 			return ;
+// 		}
+// 		*stack_a = (*stack_a)->next;
+// 	}
+// 	rotate_a(stack_a, 1);
+
+// }
+void	check_revers(t_list **stack_a, t_var data)
+{
+	t_list *tmp;
+	int len;
+	int i;
+
+	tmp = *stack_a;
+	len = data.y;
+	i = 0;
+	while ((tmp)->next)
+	{
+		if ((tmp)->content > (tmp)->next->content)
+			i++;
+		tmp = (tmp)->next;
+	}
+	if (i == len)
+		revers_rotate_a(stack_a, 1);
+	else
+		rotate_a(stack_a, 1);
 }

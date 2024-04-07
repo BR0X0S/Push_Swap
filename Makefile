@@ -6,7 +6,7 @@
 #    By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/26 16:12:26 by oumondad          #+#    #+#              #
-#    Updated: 2024/04/04 23:59:59 by oumondad         ###   ########.fr        #
+#    Updated: 2024/04/07 23:15:16 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CC = cc
 all : ${NAME}
 
 ${NAME} : ${OBJ}
-	${CC} ${CFLAGS} -fsanitize=address -g3 ${OBJ} -o ${NAME}
+	${CC} ${CFLAGS} ${OBJ} -o ${NAME}
 
 clean :
 	rm -rf ${OBJ}

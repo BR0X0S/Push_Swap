@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 23:51:36 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/07 00:02:07 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/07 23:08:17 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,17 @@ t_var	find_max(t_list *stack)
 	return (data);
 }
 
-void	revrot(t_list **stack_a, t_list **stack_b, t_var data)
+void	last_sort(t_list **stack_a, t_list **stack_b, t_var data)
 {
 	data = find_max(*stack_b);
 	if (data.mpos <= (lstsize(*stack_b) / 2))
 	{
 		while (data.max != (*stack_b)->content)
-			rotate_a(stack_b, 1);
+			rotate_b(stack_b, 1);
 	}
 	else
 		while (data.max != (*stack_b)->content)
-			revers_rotate_a(stack_b, 1);
+			revers_rotate_b(stack_b, 1);
 	push_a(stack_a, stack_b, 1);
 }
 
@@ -97,6 +97,6 @@ void	full_sort(t_var data, t_list **stack_a, t_list **stack_b)
 			i++;
 		}
 		else
-			rotate_a(stack_a, 1);
+			check_revers(stack_a, data);
 	}
 }
