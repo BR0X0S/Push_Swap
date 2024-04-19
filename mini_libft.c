@@ -6,13 +6,13 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:40:01 by oumondad          #+#    #+#             */
-/*   Updated: 2024/02/26 22:58:25 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/19 19:35:30 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlenn(char *str)
 {
 	size_t	i;
 
@@ -60,7 +60,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (place);
 }
 
-char	*ft_strjoin(char *stack, char *buffer)
+char	*ft_strjoinn(char *stack, char *buffer)
 {
 	char	*str;
 	size_t	j;
@@ -69,8 +69,8 @@ char	*ft_strjoin(char *stack, char *buffer)
 	size_t	buffer_len;
 
 	ft_check_str(buffer);
-	stack_len = ft_strlen(stack);
-	buffer_len = ft_strlen(buffer);
+	stack_len = ft_strlenn(stack);
+	buffer_len = ft_strlenn(buffer);
 	i = -1;
 	str = malloc(stack_len + buffer_len + 2);
 	if (!str)

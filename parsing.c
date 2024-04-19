@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 15:20:14 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/18 21:11:32 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/19 19:35:35 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(char *str)
 {
-	write(2, str, ft_strlen(str));
+	write(2, str, ft_strlenn(str));
 	exit(1);
 }
 
@@ -27,7 +27,7 @@ t_var	put_on_it(char **av)
 	data.args = NULL;
 	while (av[i])
 	{
-		data.args = ft_strjoin(data.args, av[i]);
+		data.args = ft_strjoinn(data.args, av[i]);
 		i++;
 	}
 	data.split = ft_split(data.args, ' ');
