@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 23:51:36 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/07 23:08:17 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:02:37 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,6 @@ void	full_sort(t_var data, t_list **stack_a, t_list **stack_b)
 			i++;
 		}
 		else
-			check_revers(stack_a, data);
+			check_revers(stack_a);
 	}
 }

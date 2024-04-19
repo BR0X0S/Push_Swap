@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 16:57:25 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/07 23:14:34 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:06:04 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,17 @@ int	main(int ac, char **av)
 		return (0);
 	stack_a = NULL;
 	stack_b = NULL;
-	data = ft_khchi_fchi(av);
+	data = put_on_it(av);
 	data = array_to_stack(&stack_a, data);
 	if (!check_if_sort(stack_a))
 		return (0);
 	data = bubble_sort(data);
-	//print_stack(stack_a, 'A');
+	// print_stack(stack_a, 'A');
 	start_sort(data, &stack_a, &stack_b);
 	// if(check_if_sort(stack_a) == 0)
-	// 	printf("====SORTED====\n");
+	// printf("====SORTED====\n");
 	// print_stack(stack_a, 'A');
-	//print_stack(stack_b, 'B');
-	system("leaks push_swap");
+	// print_stack(stack_b, 'B');
+	// system("leaks push_swap");
 	return (0);
 }

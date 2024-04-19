@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 23:01:47 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/07 23:08:03 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:12:05 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,15 @@ typedef struct s_var
 
 /* PARCING FUNCTIONS */
 
-int		ft_atoi(char *str);
-void	ft_error(char *str);
-size_t	ft_strlen(char *str);
-t_var	check_all(t_var data);
-void	ft_check_str(char *str);
-t_var	ft_khchi_fchi(char **av);
-char	**ft_split(char const *s, char c);
-char	*ft_strjoin(char *stack, char *buffer);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char *stack, char *buffer);
+char	**ft_split(char const *s, char c);
+t_var	put_on_it(char **av);
+void	ft_check_str(char *str);
+t_var	check_all(t_var data);
+size_t	ft_strlen(char *str);
+void	ft_error(char *str);
+int		ft_atoi(char *str);
 
 /* INSTRACTION FUNCTIONS */
 
@@ -84,8 +84,7 @@ void	ft_lstadd_front(t_list **stack, t_list *new_node);
 
 int		get_min_pos(t_list *stack);
 int		check_if_sort(t_list *stack);
-void	check_revers(t_list **stack_a, t_var data);
-// void	check_revers(t_list **stack_a);
+void	check_revers(t_list **stack_a);
 void	push_min(t_list **stack_a, t_list **stack_b);
 void	last_sort(t_list **stack_a, t_list **stack_b, t_var data);
 void	full_sort(t_var data, t_list **stack_a, t_list **stack_b);

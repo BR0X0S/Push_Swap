@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 15:20:14 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/06 17:11:02 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:11:32 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_error(char *str)
 	exit(1);
 }
 
-t_var	ft_khchi_fchi(char **av)
+t_var	put_on_it(char **av)
 {
 	t_var	data;
 	int		i;
