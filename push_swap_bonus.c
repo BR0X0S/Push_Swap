@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:34:16 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/20 15:59:02 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/20 16:05:55 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,4 @@ int	main(int ac, char **av)
 	else
 		write(1, "KO", 2);
 	exit (0);
-	return (0);
 }
