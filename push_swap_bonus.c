@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:34:16 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/19 19:55:49 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/20 15:59:02 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 int	ft_strcmp(char *inst, char *str)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
-	while(inst[i] || str[i])
+	while (inst[i] || str[i])
 	{
 		if (inst[i] > str[i])
-			return 1;
+			return (1);
 		else if (inst[i] < str[i])
-			return 1;
+			return (1);
 		i++;
 	}
-	return 0;
+	return (0);
 }
 
 void	check_and_apply(char *inst, t_list **stack_a, t_list **stack_b)
@@ -62,7 +62,7 @@ int	main(int ac, char **av)
 	t_list	*stack_a;
 	t_list	*stack_b;
 	char	*inst;
-	
+
 	if (ac < 2)
 		return (0);
 	stack_a = NULL;
@@ -72,24 +72,14 @@ int	main(int ac, char **av)
 	inst = get_next_line(0);
 	while (inst)
 	{
-		check_and_apply(inst, &stack_a, &stack_a);
+		check_and_apply(inst, &stack_a, &stack_b);
 		free(inst);
 		inst = get_next_line(0);
 	}
-	if (!check_if_sort(stack_a))
-		printf("msorter\n");
+	if (!check_if_sort(stack_a) && (lstsize(stack_b) == 0))
+		write(1, "OK", 2);
+	else
+		write(1, "KO", 2);
+	exit (0);
 	return (0);
 }
-
-// int main(int ac, char **av)
-// {
-// 	(void)ac;
-// 	if (!ft_strcmp(av[1], av[2]))
-// 	{
-// 		printf("homa hadok\n");
-// 		printf("dir ra\n");
-// 		return 0;
-// 	}
-// 	printf("machi homa hadok\n");
-// 	return 0;
-// }

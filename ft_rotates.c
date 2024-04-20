@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 19:35:55 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/07 00:20:07 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/19 20:10:47 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ t_var	bubble_sort(t_var data)
 
 int	check_if_sort(t_list *stack)
 {
+	if (lstsize(stack) < 1)
+		return (1);
 	while (stack->next)
 	{
 		if (stack->content > stack->next->content)

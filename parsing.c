@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 15:20:14 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/19 19:35:35 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/19 23:48:11 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_error(char *str)
 {
 	write(2, str, ft_strlenn(str));
+	system("leaks checker");
 	exit(1);
 }
 

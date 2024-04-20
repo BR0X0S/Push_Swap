@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 16:57:25 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/19 14:06:04 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/20 15:56:05 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,6 @@ int	main(int ac, char **av)
 	if (!check_if_sort(stack_a))
 		return (0);
 	data = bubble_sort(data);
-	// print_stack(stack_a, 'A');
 	start_sort(data, &stack_a, &stack_b);
-	// if(check_if_sort(stack_a) == 0)
-	// printf("====SORTED====\n");
-	// print_stack(stack_a, 'A');
-	// print_stack(stack_b, 'B');
-	// system("leaks push_swap");
-	return (0);
+	exit (0);
 }

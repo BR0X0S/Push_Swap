@@ -6,7 +6,7 @@
 #    By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/26 16:12:26 by oumondad          #+#    #+#              #
-#    Updated: 2024/04/19 19:59:07 by oumondad         ###   ########.fr        #
+#    Updated: 2024/04/19 23:46:12 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJ = ${SRC:.c=.o}
 
 BOBJ = ${BSRC:.c=.o}
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
 
 CC = cc
 
