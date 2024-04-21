@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alassiqu_sort.c                                    :+:      :+:    :+:   */
+/*   full_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 23:51:36 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/18 21:02:37 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/21 12:04:23 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	full_sort(t_var data, t_list **stack_a, t_list **stack_b)
 	{
 		if (r + i >= data.y)
 			r = data.y - i - 1;
-		else if ((*stack_a)->content > data.array[i]
+		if ((*stack_a)->content > data.array[i]
 			&& (*stack_a)->content <= data.array[r + i])
 		{
 			push_b(stack_a, stack_b, 1);

@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 15:20:14 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/19 23:48:11 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/21 11:57:35 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_error(char *str)
 {
 	write(2, str, ft_strlenn(str));
-	system("leaks checker");
 	exit(1);
 }
 
@@ -48,7 +47,7 @@ void	check_long(char *str)
 	while (str[i])
 		i++;
 	if (i - o > 11)
-		ft_error("Error");
+		ft_error("Error\n");
 }
 
 t_var	check_all(t_var data)
@@ -68,7 +67,7 @@ t_var	check_all(t_var data)
 			if (data.split[i + 1] == NULL)
 				break ;
 			if (x == ft_atoi(data.split[i + 1]))
-				ft_error("Error");
+				ft_error("Error\n");
 			i++;
 		}
 		data.y++;
@@ -82,6 +81,8 @@ t_var	array_to_stack(t_list **stack_a, t_var data)
 
 	i = 0;
 	data.array = malloc(data.y * sizeof(int));
+	if (!data.array)
+		ft_error("Error : data.array allocation faild");
 	while (i < data.y)
 	{
 		ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(data.split[i])));

@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:40:01 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/19 19:35:30 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/21 12:02:57 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	*ft_strjoinn(char *stack, char *buffer)
 	i = -1;
 	str = malloc(stack_len + buffer_len + 2);
 	if (!str)
-		return (free(stack), free(buffer), NULL);
+		ft_error("strjoinn allocation faild");
 	while (++i < stack_len && stack)
 		str[i] = stack[i];
 	str[i] = '\0';
@@ -94,7 +94,7 @@ int	ft_atoi(char *str)
 	data.sign = 1;
 	data.result = 0;
 	if ((str[0] == '-' && str[1] == '\0') || (str[0] == '+' && str[1] == '\0'))
-		ft_error("Error");
+		ft_error("Error\n");
 	if (str[data.i] == '-' || str[data.i] == '+')
 	{
 		if (str[data.i] == '-')
@@ -107,9 +107,9 @@ int	ft_atoi(char *str)
 		data.i++;
 	}
 	if (str[data.i])
-		ft_error("Error");
+		ft_error("Error\n");
 	data.result *= data.sign;
 	if (data.result > INT_MAX || data.result < INT_MIN)
-		ft_error("Error");
+		ft_error("Error\n");
 	return (data.result);
 }

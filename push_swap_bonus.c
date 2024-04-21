@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:34:16 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/20 16:05:55 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/20 18:04:05 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	check_and_apply(char *inst, t_list **stack_a, t_list **stack_b)
 	else if (!ft_strcmp(inst, "rr\n"))
 		ra_rb(stack_a, stack_b, 0);
 	else
-		ft_error("Error");
+		ft_error("Error\n");
 }
 
 int	main(int ac, char **av)
@@ -77,8 +77,8 @@ int	main(int ac, char **av)
 		inst = get_next_line(0);
 	}
 	if (!check_if_sort(stack_a) && (lstsize(stack_b) == 0))
-		write(1, "OK", 2);
+		write(1, "OK\n", 3);
 	else
-		write(1, "KO", 2);
+		write(1, "KO\n", 3);
 	exit (0);
 }
