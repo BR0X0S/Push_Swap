@@ -6,7 +6,7 @@
 #    By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/26 16:12:26 by oumondad          #+#    #+#              #
-#    Updated: 2024/04/20 16:04:48 by oumondad         ###   ########.fr        #
+#    Updated: 2024/04/21 17:28:30 by oumondad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ BNAME = checker
 SRC = ft_split.c mini_libft.c parsing.c lists.c push_swap.c ft_pushes.c ft_rotates.c ft_rrotates.c \
 	start_sort.c full_sort.c 
 
-BSRC = ft_split.c mini_libft.c parsing.c lists.c push_swap_bonus.c ft_pushes.c ft_rotates.c ft_rrotates.c \
-	get_next_line.c get_next_line_utils.c 
+BSRC = ft_split.c mini_libft.c parsing.c lists.c checker_bonus.c ft_pushes.c ft_rotates.c ft_rrotates.c \
+	get_next_line_bonus.c get_next_line_utils_bonus.c 
 
 OBJ = ${SRC:.c=.o}
 

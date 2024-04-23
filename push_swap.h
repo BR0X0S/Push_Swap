@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 23:01:47 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/21 12:03:37 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:28:00 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-# include "get_next_line.h"
 
 /* LINKED LIST STRUCT */
 
@@ -76,7 +75,6 @@ int		lstsize(t_list *lst);
 t_list	*ft_lstnew(int content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_before_last(t_list *lst);
-void	print_stack(t_list *stack_a, char c);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 t_var	array_to_stack(t_list **stack_a, t_var data);
 void	ft_lstadd_front(t_list **stack, t_list *new_node);

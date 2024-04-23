@@ -6,22 +6,11 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 16:57:25 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/21 11:53:56 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/21 12:13:59 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_stack(t_list *stack_a, char c)
-{
-	printf("=---------------%c----------------=\n", c);
-	while (stack_a)
-	{
-		printf("%d\n", (stack_a)->content);
-		stack_a = (stack_a)->next;
-	}
-	printf("=---------------%c----------------=\n", c);
-}
 
 int	main(int ac, char **av)
 {
