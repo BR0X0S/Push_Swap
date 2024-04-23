@@ -6,7 +6,7 @@
 /*   By: oumondad <oumondad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 15:40:01 by oumondad          #+#    #+#             */
-/*   Updated: 2024/04/21 20:19:05 by oumondad         ###   ########.fr       */
+/*   Updated: 2024/04/23 20:11:00 by oumondad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strchr(char *str, char c)
 {
 	size_t	i;
 
-	if (!str) 
+	if (!str)
 		return (0);
 	i = 0;
 	while (str[i])
